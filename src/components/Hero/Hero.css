@@ -1,0 +1,35 @@
+.Hero--container {
+  text-align: center;
+}
+
+.Hero--image {
+  width: 330px;
+  position: relative;
+}
+
+.Hero--shape {
+  width: 380px;
+  height: 200px;
+  border-bottom-left-radius: 30%;
+  border-top-left-radius: 30%;
+  background-color: var(--soft-blue);
+  position: absolute;
+  top: 60px;
+  left: 90px;
+  z-index: -1;
+}
+
+.Hero--heading {
+  font-weight: lighter;
+}
+
+.Hero--description {
+  padding: 20px;
+  line-height: 1.6;
+  color: var(--grayish-blue);
+}
+
+.Hero--buttons-container {
+  display: flex;
+  justify-content: center;
+}
