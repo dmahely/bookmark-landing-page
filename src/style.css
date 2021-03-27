@@ -1,3 +1,17 @@
+:root {
+  --soft-blue: hsl(231, 69%, 60%);
+  --soft-red: hsl(0, 94%, 66%);
+  --grayish-blue: hsl(229, 8%, 60%);
+  --light-grayish-blue: hsla(228.7, 7.8%, 60%, 0.2);
+  --very-dark-blue: hsl(229, 31%, 21%);
+  --white: hsl(255, 100%, 100%);
+}
+
+body {
+  font: 18px "Rubik", sans-serif;
+  padding: 10px;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
