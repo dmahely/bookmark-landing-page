@@ -13,6 +13,10 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         options: { presets: ["@babel/env"]}
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader'
       }
     ]
   },
