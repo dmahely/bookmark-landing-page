@@ -10,7 +10,7 @@ const TextButton = ({text, size, color, backgroundColor}) => {
             size = '150px';
             break;
         case 'l':
-            size = '230px';
+            size = '300px';
             break;
     }
 
