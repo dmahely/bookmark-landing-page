@@ -1,0 +1,30 @@
+.Footer--container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-dark-blue);
+  align-items: center;
+  padding: 40px 0;
+}
+
+.Footer--logo {
+  margin-bottom: 15px;
+}
+
+.Footer--link {
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  font-size: 16px;
+  margin: 15px;
+}
+
+.Footer--icon-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.Footer--icon {
+  margin: 15px;
+}
