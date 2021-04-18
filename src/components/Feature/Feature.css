@@ -1,0 +1,13 @@
+hr {
+  opacity: 0.1;
+}
+
+.Feature--container {
+  margin: 10px 10px 40px 10px;
+  display: none;
+}
+
+/* First feature container will be visible by default */
+#simpleBookmarking {
+  display: block;
+}
