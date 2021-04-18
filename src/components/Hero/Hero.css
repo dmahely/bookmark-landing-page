@@ -1,10 +1,10 @@
 .Hero--container {
   text-align: center;
+  position: relative;
 }
 
 .Hero--image {
   width: 330px;
-  position: relative;
 }
 
 .Hero--shape {
