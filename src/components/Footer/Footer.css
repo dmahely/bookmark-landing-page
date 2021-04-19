@@ -4,6 +4,7 @@
   background-color: var(--very-dark-blue);
   align-items: center;
   padding: 40px 0;
+  margin: 0 -20px; /* To counteract positive padding on body */
 }
 
 .Footer--logo {

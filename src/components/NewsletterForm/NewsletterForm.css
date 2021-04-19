@@ -5,6 +5,7 @@
   align-items: center;
   text-align: center;
   padding: 40px 0;
+  margin: 0 -20px; /* To counteract positive padding on body */
 }
 
 .Newsletter--heading {
