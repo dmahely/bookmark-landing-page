@@ -1,9 +1,9 @@
 import React from "react";
 import "./Feature.css";
 
-const Feature = ({ heading, image, description, id }) => {
+const Feature = ({ heading, image, description, id, state }) => {
   return (
-    <div className="Feature--container" id={id}>
+    <div className={`Feature--container Feature--container-${state}`} id={id}>
       <div className="Feature--inner-container">
         <div className="Feature--image-container">
           <img className="Feature--image" src={image} alt={heading} />

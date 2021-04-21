@@ -7,30 +7,26 @@ import easySharing from "../../../images/illustration-features-tab-3.svg";
 
 const Features = () => {
   const handleTabClick = (e) => {
-    let hiddenFeatures;
-    switch (e.target.id) {
-      case "simpleBookmarkingTab":
-        hiddenFeatures = document.getElementsByClassName("Feature--container");
-        for (let feature of hiddenFeatures) {
-          feature.style.display = "none";
-        }
-        document.getElementById("simpleBookmarking").style.display = "block";
-        break;
-      case "speedySearchingTab":
-        hiddenFeatures = document.getElementsByClassName("Feature--container");
-        for (let feature of hiddenFeatures) {
-          feature.style.display = "none";
-        }
-        document.getElementById("speedySearching").style.display = "block";
-        break;
-      case "easySharingTab":
-        hiddenFeatures = document.getElementsByClassName("Feature--container");
-        for (let feature of hiddenFeatures) {
-          feature.style.display = "none";
-        }
-        document.getElementById("easySharing").style.display = "block";
-        break;
-    }
+    const targetTab = e.target;
+    const targetTabId = e.target.id;
+
+    // handles changing the css classes for the tab headings
+    Array.from(
+      document.querySelectorAll(".Feature--tab-heading-active")
+    ).forEach((el) => el.classList.remove("Feature--tab-heading-active"));
+    targetTab.parentNode.classList.add("Feature--tab-heading-active");
+
+    // handles changing the css classes for the related features
+    const relatedFeatureId = targetTabId.substring(0, targetTabId.length - 3);
+    const feature = document.querySelector(`#${relatedFeatureId}`);
+    Array.from(document.querySelectorAll(".Feature--container-active")).forEach(
+      (el) => {
+        el.classList.add("Feature--container-inactive");
+        el.classList.remove("Feature--container-active");
+      }
+    );
+    feature.classList.add("Feature--container-active");
+    feature.classList.remove("Feature--container-inactive");
   };
   return (
     <div className="Features--container">
@@ -41,7 +37,7 @@ const Features = () => {
         them on the go.
       </p>
       <hr />
-      <h3 className="Feature--tab-heading">
+      <h3 className="Feature--tab-heading Feature--tab-heading-active">
         <a id="simpleBookmarkingTab" onClick={handleTabClick}>
           Simple Bookmarking
         </a>
@@ -65,6 +61,7 @@ const Features = () => {
         heading="Bookmark in one click"
         image={simpleBookmarking}
         description="Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites."
+        state="active"
       />
 
       <Feature
@@ -72,6 +69,7 @@ const Features = () => {
         heading="Intelligent search"
         image={speedySearching}
         description="Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks."
+        state="inactive"
       />
 
       <Feature
@@ -79,6 +77,7 @@ const Features = () => {
         heading="Share your bookmarks"
         image={easySharing}
         description="Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button."
+        state="inactive"
       />
     </div>
   );

@@ -7,9 +7,12 @@ hr {
   display: none;
 }
 
-/* First feature container will be visible by default */
-#simpleBookmarking {
+.Feature--container-active {
   display: block;
+}
+
+.Feature--container-inactive {
+  display: none;
 }
 
 .Feature--image-container {
