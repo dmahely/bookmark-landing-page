@@ -23,13 +23,42 @@
   font-size: 24px;
 }
 
+.Newsletter--input-container {
+  padding: 0px;
+  border-radius: 5px;
+  position: relative;
+  margin: 10px;
+}
+
+.Newsletter--input-container.wrong {
+  background-color: var(--soft-red);
+}
+
 .Newsletter--input {
   padding-left: 15px;
   border: none;
-  border-radius: 5px;
-  height: 40px;
-  width: 290px;
-  margin: 5px;
-  font-size: 16px;
-  margin: 10px;
+  border-radius: inherit;
+  height: 50px;
+  width: 298px;
+  margin: 2px;
+  font-size: 14px;
+}
+
+.Newsletter--wrong-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.inactive {
+  display: none;
+}
+
+.Newsletter--wrong-input {
+  margin: 0;
+  color: var(--white);
+  font-size: 12px;
+  text-align: left;
+  padding: 3px 15px;
+  font-style: italic;
 }
