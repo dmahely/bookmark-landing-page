@@ -25,10 +25,14 @@
   margin-top: 10px;
 }
 
+.Nav--hidden {
+  display: none !important;
+}
+
 .Nav--mobile-links-container {
   position: absolute;
   top: 0;
-  display: none;
+  display: flex;
   flex-direction: column;
   background-color: var(--very-dark-blue-transparent);
   padding: 20px 50px;

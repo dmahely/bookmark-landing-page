@@ -9,20 +9,21 @@ import facebookLogo from "../../../images/icon-facebook.svg";
 import closeIcon from "../../../images/icon-close.svg";
 
 const Nav = () => {
-  /* Refactor to use predefined classes */
   const handleHamburgerClick = (e) => {
-    document.getElementById("Nav--container").style.visibility = "hidden";
-    document.getElementById("Nav--mobile-links-container").style.display =
-      "flex";
+    document.querySelector(".Nav--container").classList.add("Nav--hidden");
+    document
+      .querySelector(".Nav--mobile-links-container")
+      .classList.remove("Nav--hidden");
     // consider refactoring this to use a context
     document.querySelector("main").style.filter = "blur(1px)";
     document.querySelector("html").style.overflowY = "hidden";
   };
 
   const handleCloseClick = (e) => {
-    document.getElementById("Nav--container").style.visibility = "visible";
-    document.getElementById("Nav--mobile-links-container").style.display =
-      "none";
+    document.querySelector(".Nav--container").classList.remove("Nav--hidden");
+    document
+      .querySelector(".Nav--mobile-links-container")
+      .classList.add("Nav--hidden");
     // consider refactoring this to use a context
     document.querySelector("main").style.filter = "none";
     document.querySelector("html").style.overflowY = "scroll";
@@ -63,7 +64,7 @@ const Nav = () => {
 
       <div
         id="Nav--mobile-links-container"
-        className="Nav--mobile-links-container"
+        className="Nav--mobile-links-container Nav--hidden"
       >
         <div className="Nav--mobile-top-container">
           <a href="#">
