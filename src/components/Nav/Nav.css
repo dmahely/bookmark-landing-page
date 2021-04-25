@@ -8,6 +8,10 @@
   margin-bottom: 50px;
 }
 
+.Nav--logo {
+  align-self: center;
+}
+
 .Nav--link {
   text-decoration: none;
   color: var(--black);
@@ -92,7 +96,7 @@
     display: block;
   }
 
-  .Nav--hamburger-container {
+  .Nav--hamburger-icon {
     display: none;
   }
 }

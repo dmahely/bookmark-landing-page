@@ -32,7 +32,7 @@ const Nav = () => {
   return (
     <div className="Nav--outer-container">
       <div id="Nav--container" className="Nav--container">
-        <a href="#">
+        <a className="Nav--logo" href="#">
           <img src={darkLogo} alt="Bookmark logo" />
         </a>
         <a
