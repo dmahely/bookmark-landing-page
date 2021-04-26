@@ -1,0 +1,46 @@
+.FAQ--outer-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.FAQ--description {
+  padding: 20px;
+  color: var(--grayish-blue);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.FAQ--questions-container {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.FAQ--question-heading {
+  cursor: pointer;
+}
+
+.FAQ--active {
+  display: block;
+}
+
+.FAQ--hidden {
+  display: none;
+}
+
+.FAQ--question {
+  display: flex;
+  justify-content: space-between;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.FAQ--question > * {
+  align-self: center; /* To prevent chevron from stretching */
+}
+
+.FAQ--answer {
+  font-size: 14px;
+  color: var(--grayish-blue);
+  padding: 20px;
+  line-height: 2;
+}
