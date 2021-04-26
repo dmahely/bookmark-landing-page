@@ -7,6 +7,7 @@ const NewsletterForm = () => {
   const emailInput = useRef(null);
 
   const handleWrongInput = (e) => {
+    e.preventDefault();
     const isValidEmail = emailInput.current.value.match(
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     );
