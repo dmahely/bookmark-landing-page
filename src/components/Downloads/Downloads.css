@@ -1,0 +1,28 @@
+:root {
+  --container-margin: 30px;
+}
+
+.Downloads--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1100px) {
+  .Downloads--container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #Download--container-1 {
+    margin-top: var(--container-margin);
+  }
+
+  #Download--container-2 {
+    margin-top: calc(var(--container-margin) * 2);
+  }
+
+  #Download--container-3 {
+    margin-top: calc(var(--container-margin) * 3);
+  }
+}
