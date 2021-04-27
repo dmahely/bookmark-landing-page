@@ -16,7 +16,15 @@
   text-decoration: none;
   color: var(--black);
   text-transform: uppercase;
-  margin: 5px;
+  margin: 25px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: var(--black);
+  font-weight: lighter;
+}
+
+.Nav--link:hover {
+  color: var(--soft-red);
 }
 
 .Nav--links-container {

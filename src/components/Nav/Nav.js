@@ -57,7 +57,7 @@ const Nav = () => {
             text="LOGIN"
             color="white"
             backgroundColor="red"
-            size="s"
+            size="m"
           />
         </div>
       </div>
