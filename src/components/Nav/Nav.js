@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import darkLogo from "../../../images/logo-bookmark-dark.svg";
 import whiteLogo from "../../../images/logo-bookmark-white.svg";
@@ -7,23 +7,19 @@ import { TextButton } from "../TextButton/TextButton";
 import twitterLogo from "../../../images/icon-twitter.svg";
 import facebookLogo from "../../../images/icon-facebook.svg";
 import closeIcon from "../../../images/icon-close.svg";
+import cx from "classnames";
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const handleHamburgerClick = (e) => {
-    document.querySelector(".Nav--container").classList.add("Nav--hidden");
-    document
-      .querySelector(".Nav--mobile-links-container")
-      .classList.remove("Nav--hidden");
+    setIsOpen(true);
     // consider refactoring this to use a context
     document.querySelector("main").style.filter = "blur(1px)";
     document.querySelector("html").style.overflowY = "hidden";
   };
 
   const handleCloseClick = (e) => {
-    document.querySelector(".Nav--container").classList.remove("Nav--hidden");
-    document
-      .querySelector(".Nav--mobile-links-container")
-      .classList.add("Nav--hidden");
+    setIsOpen(false);
     // consider refactoring this to use a context
     document.querySelector("main").style.filter = "none";
     document.querySelector("html").style.overflowY = "scroll";
@@ -31,7 +27,12 @@ const Nav = () => {
 
   return (
     <div className="Nav--outer-container">
-      <div id="Nav--container" className="Nav--container">
+      <div
+        id="Nav--container"
+        className={cx("Nav--container", {
+          "Nav--hidden": isOpen,
+        })}
+      >
         <a className="Nav--logo" href="#">
           <img src={darkLogo} alt="Bookmark logo" />
         </a>
@@ -64,7 +65,9 @@ const Nav = () => {
 
       <div
         id="Nav--mobile-links-container"
-        className="Nav--mobile-links-container Nav--hidden"
+        className={cx("Nav--mobile-links-container", {
+          "Nav--hidden": !isOpen,
+        })}
       >
         <div className="Nav--mobile-top-container">
           <a href="#">
