@@ -1,32 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Features.css";
 import { Feature } from "../Feature/Feature";
 import simpleBookmarking from "../../../images/illustration-features-tab-1.svg";
 import speedySearching from "../../../images/illustration-features-tab-2.svg";
 import easySharing from "../../../images/illustration-features-tab-3.svg";
+import cx from "classnames";
 
 const Features = () => {
+  const [isOpen, setIsOpen] = useState({
+    simpleBookmarkingTab: true,
+    speedySearchingTab: false,
+    easySharingTab: false,
+  });
+
   const handleTabClick = (e) => {
-    const targetTab = e.target;
     const targetTabId = e.target.id;
 
-    // handles changing the css classes for the tab headings
-    Array.from(
-      document.querySelectorAll(".Feature--tab-heading-active")
-    ).forEach((el) => el.classList.remove("Feature--tab-heading-active"));
-    targetTab.parentNode.classList.add("Feature--tab-heading-active");
+    const previouslyActiveTab = Object.entries(isOpen)
+      .filter((val) => val[1] === true)
+      .flat()[0];
 
-    // handles changing the css classes for the related features
-    const relatedFeatureId = targetTabId.substring(0, targetTabId.length - 3);
-    const feature = document.querySelector(`#${relatedFeatureId}`);
-    Array.from(document.querySelectorAll(".Feature--container-active")).forEach(
-      (el) => {
-        el.classList.add("Feature--container-inactive");
-        el.classList.remove("Feature--container-active");
-      }
-    );
-    feature.classList.add("Feature--container-active");
-    feature.classList.remove("Feature--container-inactive");
+    setIsOpen({ ...isOpen, [previouslyActiveTab]: false, [targetTabId]: true });
   };
   return (
     <div className="Features--container">
@@ -37,19 +31,31 @@ const Features = () => {
         them on the go.
       </p>
       <hr />
-      <h3 className="Feature--tab-heading Feature--tab-heading-active">
+      <h3
+        className={cx("Feature--tab-heading", {
+          "Feature--tab-heading-active": isOpen["simpleBookmarkingTab"],
+        })}
+      >
         <a id="simpleBookmarkingTab" onClick={handleTabClick}>
           Simple Bookmarking
         </a>
       </h3>
       <hr />
-      <h3 className="Feature--tab-heading">
+      <h3
+        className={cx("Feature--tab-heading", {
+          "Feature--tab-heading-active": isOpen["speedySearchingTab"],
+        })}
+      >
         <a id="speedySearchingTab" onClick={handleTabClick}>
           Speedy Searching
         </a>
       </h3>
       <hr />
-      <h3 className="Feature--tab-heading">
+      <h3
+        className={cx("Feature--tab-heading", {
+          "Feature--tab-heading-active": isOpen["easySharingTab"],
+        })}
+      >
         <a id="easySharingTab" onClick={handleTabClick}>
           Easy Sharing
         </a>
@@ -61,7 +67,7 @@ const Features = () => {
         heading="Bookmark in one click"
         image={simpleBookmarking}
         description="Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites."
-        state="active"
+        isActive={isOpen["simpleBookmarkingTab"]}
       />
 
       <Feature
@@ -69,7 +75,7 @@ const Features = () => {
         heading="Intelligent search"
         image={speedySearching}
         description="Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks."
-        state="inactive"
+        isActive={isOpen["speedySearchingTab"]}
       />
 
       <Feature
@@ -77,7 +83,7 @@ const Features = () => {
         heading="Share your bookmarks"
         image={easySharing}
         description="Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button."
-        state="inactive"
+        isActive={isOpen["easySharingTab"]}
       />
     </div>
   );
