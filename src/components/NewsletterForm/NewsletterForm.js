@@ -1,25 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./NewsletterForm.css";
 import { TextButton } from "../TextButton/TextButton";
 import errorIcon from "../../../images/icon-error.svg";
+import cx from "classnames";
 
 const NewsletterForm = () => {
   const emailInput = useRef(null);
+  const [isValidInput, setIsValidInput] = useState(true);
 
-  const handleWrongInput = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const isValidEmail = emailInput.current.value.match(
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     );
-    if (!isValidEmail || isValidEmail === null) {
-      document
-        .querySelector(".Newsletter--input-container")
-        .classList.add("wrong");
 
-      document
-        .querySelectorAll(".inactive")
-        .forEach((el) => el.classList.remove("inactive"));
-    }
+    isValidEmail ? setIsValidInput(true) : setIsValidInput(false);
   };
 
   return (
@@ -29,7 +24,11 @@ const NewsletterForm = () => {
         Stay up-to-date with what we're doing
       </span>
       <form>
-        <div className="Newsletter--input-container">
+        <div
+          className={cx("Newsletter--input-container", {
+            "Newsletter--input-container-wrong": !isValidInput,
+          })}
+        >
           <input
             required
             className="Newsletter--input"
@@ -39,9 +38,15 @@ const NewsletterForm = () => {
           <img
             src={errorIcon}
             alt="Error icon"
-            className="Newsletter--wrong-icon inactive"
+            className={cx("Newsletter--wrong-icon", {
+              "Newsletter--inactive": isValidInput,
+            })}
           />
-          <p className="Newsletter--wrong-input inactive">
+          <p
+            className={cx("Newsletter--wrong-input", {
+              "Newsletter--inactive": isValidInput,
+            })}
+          >
             Whoops, make sure it's an email
           </p>
         </div>
@@ -50,7 +55,7 @@ const NewsletterForm = () => {
           color="white"
           size="l"
           backgroundColor="red"
-          onClick={handleWrongInput}
+          onClick={handleSubmit}
         />
       </form>
     </div>
