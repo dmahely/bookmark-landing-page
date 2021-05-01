@@ -21,11 +21,21 @@
   margin: 15px;
 }
 
+.Footer--link:hover {
+  color: var(--soft-red);
+}
+
 .Footer--icon-container {
   display: flex;
   flex-direction: row;
 }
 
 .Footer--icon {
+  fill: var(--white);
+  cursor: pointer;
   margin: 15px;
+}
+
+.Footer--icon:hover {
+  fill: var(--soft-red);
 }
