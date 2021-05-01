@@ -51,7 +51,7 @@ const TextButton = ({ text, size, color, backgroundColor, onClick }) => {
   }
   return (
     <button
-      className="TextButton-button"
+      className="TextButton--button"
       style={{ width: size, color: color, backgroundColor: backgroundColor }}
       onClick={onClick}
     >

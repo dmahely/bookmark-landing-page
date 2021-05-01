@@ -1,4 +1,4 @@
-.TextButton-button {
+.TextButton--button {
   box-shadow: -2px 10px 15px -6px rgba(125, 118, 118, 0.5);
   padding: 5px;
   border: none;
@@ -8,7 +8,10 @@
   margin: 0 10px;
 }
 
-.TextButton-button:hover {
+.TextButton--button:hover {
   cursor: pointer;
-  background-color: var(--white);
+  /* Needed to override the properties defined inline */
+  background-color: var(--white) !important;
+  color: var(--soft-blue) !important;
+  border: 1px solid var(--soft-blue) !important;
 }
