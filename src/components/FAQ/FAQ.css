@@ -1,26 +1,6 @@
-.FAQ--outer-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.FAQ--description {
-  padding: 20px;
-  color: var(--grayish-blue);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.FAQ--questions-container {
-  text-align: left;
-  margin-bottom: 40px;
-}
-
-.FAQ--question-heading {
+.FAQ--question-heading:hover {
   cursor: pointer;
-}
-
-.FAQ--active {
-  display: block;
+  color: var(--soft-red);
 }
 
 .FAQ--hidden {
