@@ -7,6 +7,7 @@
   --very-dark-blue-transparent: hsla(229, 41.9%, 22.9%, 0.9);
   --white: hsl(255, 100%, 100%);
   --black: hsl(0, 100%, 0%);
+  --red: hsl(0, 100%, 50%);
 }
 
 * {

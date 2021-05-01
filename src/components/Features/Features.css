@@ -24,7 +24,7 @@
 
 .Feature--tab-heading-active::after {
   content: "";
-  background-color: red;
+  background-color: var(--red);
   height: 3px;
   width: 150px;
   bottom: -16px;
@@ -34,6 +34,7 @@
 }
 
 .Feature--tab-heading:hover {
+  color: var(--soft-red);
   cursor: pointer;
   opacity: 1;
 }
