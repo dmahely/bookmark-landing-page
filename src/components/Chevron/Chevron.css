@@ -1,0 +1,6 @@
+.Chevron--icon {
+  color: var(--soft-blue);
+}
+.Chevron-icon--active {
+  transform: rotate(180deg);
+}
