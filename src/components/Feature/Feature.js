@@ -15,8 +15,10 @@ const Feature = ({ heading, image, description, id, isActive }) => {
           <img className="Feature--image" src={image} alt={heading} />
           <div className="Feature--shape"></div>
         </div>
-        <h3 className="Feature--heading">{heading}</h3>
-        <p className="Feature--description">{description}</p>
+        <div className="Feature--text-container">
+          <h3 className="Feature--heading">{heading}</h3>
+          <p className="Feature--description">{description}</p>
+        </div>
       </div>
     </div>
   );

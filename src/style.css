@@ -26,8 +26,12 @@ body {
 
 .attribution {
   font-size: 11px;
+}
+
+footer {
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
