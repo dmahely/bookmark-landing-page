@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Nav.css";
 import darkLogo from "../../../images/logo-bookmark-dark.svg";
 import whiteLogo from "../../../images/logo-bookmark-white.svg";
@@ -8,20 +8,21 @@ import twitterLogo from "../../../images/icon-twitter.svg";
 import facebookLogo from "../../../images/icon-facebook.svg";
 import closeIcon from "../../../images/icon-close.svg";
 import cx from "classnames";
+import { MainContext } from "../../contexts/MainContext";
 
 const Nav = () => {
+  const { style, setStyle } = useContext(MainContext);
   const [isOpen, setIsOpen] = useState(false);
   const handleHamburgerClick = (e) => {
     setIsOpen(true);
-    // consider refactoring this to use a context
-    document.querySelector("main").style.filter = "blur(1px)";
+    setStyle("blurred");
+    // look into a custom hook that prevents the browser from scrolling based on state e.g. usePreventScrolling
     document.querySelector("html").style.overflowY = "hidden";
   };
 
   const handleCloseClick = (e) => {
     setIsOpen(false);
-    // consider refactoring this to use a context
-    document.querySelector("main").style.filter = "none";
+    setStyle("normal");
     document.querySelector("html").style.overflowY = "scroll";
   };
 
