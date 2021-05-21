@@ -3,7 +3,7 @@ import "./Nav.css";
 import darkLogo from "../../../images/logo-bookmark-dark.svg";
 import whiteLogo from "../../../images/logo-bookmark-white.svg";
 import hamburgerIcon from "../../../images/icon-hamburger.svg";
-import { TextButton } from "../TextButton/TextButton";
+import { RedButton } from "../TextButton/RedButton";
 import twitterLogo from "../../../images/icon-twitter.svg";
 import facebookLogo from "../../../images/icon-facebook.svg";
 import closeIcon from "../../../images/icon-close.svg";
@@ -54,12 +54,7 @@ const Nav = () => {
           <a href="#" className="Nav--link">
             Contact
           </a>
-          <TextButton
-            text="LOGIN"
-            color="white"
-            backgroundColor="red"
-            size="m"
-          />
+          <RedButton text="LOGIN" />
         </div>
       </div>
 
