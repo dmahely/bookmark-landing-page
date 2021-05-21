@@ -14,7 +14,7 @@
 .RedButton--button {
   color: var(--white);
   background-color: var(--soft-red);
-  width: 120px;
+  width: 300px;
 }
 
 .RedButton--button:hover {
@@ -52,4 +52,10 @@
   background-color: var(--soft-blue);
   color: var(--white);
   padding: 5px 10px;
+}
+
+@media screen and (min-width: 1100px) {
+  .RedButton--button {
+    width: 120px;
+  }
 }

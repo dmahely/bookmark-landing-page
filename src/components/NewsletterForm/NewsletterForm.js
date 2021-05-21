@@ -23,7 +23,7 @@ const NewsletterForm = () => {
       <span className="Newsletter--description">
         Stay up-to-date with what we're doing
       </span>
-      <form>
+      <form className="Newsletter--form">
         <div
           className={cx("Newsletter--input-container", {
             "Newsletter--input-container-wrong": !isValidInput,

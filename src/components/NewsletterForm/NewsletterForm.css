@@ -23,6 +23,11 @@
   font-size: 24px;
 }
 
+.Newsletter--form {
+  display: flex;
+  flex-direction: column;
+}
+
 .Newsletter--input-container {
   padding: 0px;
   border-radius: 5px;
@@ -61,4 +66,11 @@
   text-align: left;
   padding: 3px 15px;
   font-style: italic;
+}
+
+@media screen and (min-width: 1100px) {
+  .Newsletter--form {
+    flex-direction: row;
+    align-items: center;
+  }
 }
