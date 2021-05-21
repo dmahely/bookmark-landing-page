@@ -5,16 +5,18 @@ import logo from "../../../images/logo-bookmark-light.svg";
 const Footer = () => {
   return (
     <div className="Footer--container">
-      <img className="Footer--logo" src={logo} alt="Bookmark logo" />
-      <a href="#" className="Footer--link">
-        Features
-      </a>
-      <a href="#" className="Footer--link">
-        Pricing
-      </a>
-      <a href="#" className="Footer--link">
-        Contact
-      </a>
+      <div className="Footer--links-container">
+        <img className="Footer--logo" src={logo} alt="Bookmark logo" />
+        <a href="#" className="Footer--link">
+          Features
+        </a>
+        <a href="#" className="Footer--link">
+          Pricing
+        </a>
+        <a href="#" className="Footer--link">
+          Contact
+        </a>
+      </div>
 
       <div className="Footer--icon-container">
         <svg
