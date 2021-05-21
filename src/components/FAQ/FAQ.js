@@ -6,9 +6,7 @@ import cx from "classnames";
 const FAQ = ({ question, answer, num }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleTabClick = (e) => {
-    isOpen ? setIsOpen(false) : setIsOpen(true);
-  };
+  const handleTabClick = (e) => setIsOpen((isOpen) => !isOpen);
 
   return (
     <div className="FAQ--question-container">
