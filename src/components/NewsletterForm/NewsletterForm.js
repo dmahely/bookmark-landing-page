@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./NewsletterForm.css";
-import { TextButton } from "../TextButton/TextButton";
+import { RedButton } from "../TextButton/RedButton";
 import errorIcon from "../../../images/icon-error.svg";
 import cx from "classnames";
 
@@ -50,13 +50,7 @@ const NewsletterForm = () => {
             Whoops, make sure it's an email
           </p>
         </div>
-        <TextButton
-          text="Contact Us"
-          color="white"
-          size="l"
-          backgroundColor="red"
-          onClick={handleSubmit}
-        />
+        <RedButton text="Contact Us" onClick={handleSubmit} />
       </form>
     </div>
   );

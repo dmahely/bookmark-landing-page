@@ -1,6 +1,6 @@
 import React from "react";
 import "./BrowserDownload.css";
-import { TextButton } from "../TextButton/TextButton";
+import { PrimaryButton } from "../TextButton/PrimaryButton";
 import divider from "../../../images/bg-dots.svg";
 
 const BrowserDownload = ({ browser, minVersion, icon, num }) => {
@@ -12,12 +12,7 @@ const BrowserDownload = ({ browser, minVersion, icon, num }) => {
         Minimum version {minVersion}
       </span>
       <img className="Download--divider" src={divider} alt="Divider" />
-      <TextButton
-        size="l"
-        backgroundColor="purple"
-        color="white"
-        text="Add & Install Extension"
-      />
+      <PrimaryButton text="Add & Install Extension" />
     </div>
   );
 };
