@@ -1,7 +1,7 @@
 import React from "react";
 import { FAQ } from "../FAQ/FAQ";
 import "./FAQs.css";
-import { TextButton } from "../TextButton/TextButton";
+import { InfoButton } from "../TextButton/InfoButton";
 
 const FAQs = () => {
   return (
@@ -52,12 +52,7 @@ const FAQs = () => {
         />
         <hr />
       </div>
-      <TextButton
-        text="More Info"
-        size="s"
-        backgroundColor="purple"
-        color="white"
-      />
+      <InfoButton text="More Info" />
     </div>
   );
 };

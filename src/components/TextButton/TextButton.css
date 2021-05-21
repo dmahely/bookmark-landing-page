@@ -4,6 +4,7 @@
   height: 50px;
   font-size: 16px;
   margin: 0 10px;
+  border: none;
 }
 
 .TextButton--button:hover {
@@ -39,9 +40,16 @@
   background-color: var(--light-grayish-blue);
   border: 1px solid var(--light-grayish-blue);
   padding: 5px 15px;
+  width: 175px;
 }
 
 .SecondaryButton--button:hover {
   background-color: var(--white);
   border: 1px solid var(--black);
+}
+
+.InfoButton--button {
+  background-color: var(--soft-blue);
+  color: var(--white);
+  padding: 5px 10px;
 }
