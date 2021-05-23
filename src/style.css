@@ -21,19 +21,17 @@ html {
 body {
   font: 18px "Rubik", sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .attribution {
   font-size: 11px;
-}
-
-footer {
   text-align: center;
+  color: var(--white);
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--soft-red);
 }
 
 .blurred {

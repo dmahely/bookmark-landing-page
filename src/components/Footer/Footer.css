@@ -1,10 +1,15 @@
 .Footer--container {
+  background-color: var(--very-dark-blue);
+  margin: 0 -20px; /* To counteract positive padding on body */
   display: flex;
   flex-direction: column;
-  background-color: var(--very-dark-blue);
+}
+
+.Footer--inner-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 40px 0;
-  margin: 0 -20px; /* To counteract positive padding on body */
 }
 
 .Footer--logo {
@@ -47,7 +52,7 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .Footer--container {
+  .Footer--inner-container {
     flex-direction: row;
     padding: 40px 150px;
   }
