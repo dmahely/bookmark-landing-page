@@ -38,7 +38,7 @@
 }
 
 .Nav--hidden {
-  display: none !important;
+  visibility: hidden;
 }
 
 .Nav--mobile-links-container {
