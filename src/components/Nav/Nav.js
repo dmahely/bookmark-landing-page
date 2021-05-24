@@ -9,21 +9,22 @@ import facebookLogo from "../../../images/icon-facebook.svg";
 import closeIcon from "../../../images/icon-close.svg";
 import cx from "classnames";
 import { MainContext } from "../../contexts/MainContext";
+import useScrollBlock from "../../contexts/useScrollBlock";
 
 const Nav = () => {
   const { style, setStyle } = useContext(MainContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
   const handleHamburgerClick = (e) => {
     setIsOpen(true);
     setStyle("blurred");
-    // look into a custom hook that prevents the browser from scrolling based on state e.g. usePreventScrolling
-    document.querySelector("html").style.overflowY = "hidden";
+    blockScroll();
   };
 
   const handleCloseClick = (e) => {
     setIsOpen(false);
     setStyle("normal");
-    document.querySelector("html").style.overflowY = "scroll";
+    allowScroll();
   };
 
   return (
