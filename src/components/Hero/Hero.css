@@ -3,14 +3,20 @@
   flex-direction: column;
   text-align: center;
   margin-bottom: 80px;
+  justify-content: center;
+  align-items: center;
 }
 
 .Hero--image-container {
   position: relative;
+  display: grid;
+  justify-items: center;
+  width: max-content;
+  max-width: 100%;
 }
 
 .Hero--image {
-  width: 360px;
+  max-width: 100%;
 }
 
 .Hero--shape {
@@ -20,8 +26,8 @@
   border-top-left-radius: 30%;
   background-color: var(--soft-blue);
   position: absolute;
-  top: 60px;
-  left: 90px;
+  bottom: 0;
+  left: 25%;
   z-index: -1;
 }
 
@@ -42,13 +48,6 @@
 }
 
 @media screen and (min-width: 700px) {
-  .Hero--shape {
-    width: 70%;
-    height: 80%;
-    top: 50px;
-    left: 320px;
-  }
-
   .Hero--description {
     width: 50%;
   }
@@ -57,14 +56,5 @@
 @media screen and (min-width: 1000px) {
   .Hero--container {
     flex-direction: row-reverse;
-  }
-
-  .Hero--image {
-    width: 100%;
-  }
-
-  .Hero--shape {
-    width: 80%;
-    left: 130px;
   }
 }
