@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .Footer--logo {
@@ -54,7 +54,7 @@
 @media screen and (min-width: 1100px) {
   .Footer--inner-container {
     flex-direction: row;
-    padding: 40px 150px;
+    padding: 20px 150px;
   }
 
   .Footer--logo {
